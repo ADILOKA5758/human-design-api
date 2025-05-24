@@ -1,6 +1,7 @@
 import swisseph as swe
 from flask import Flask, request, jsonify
 import datetime
+import os
 
 app = Flask(__name__)
 
@@ -30,9 +31,7 @@ def chart():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-import os
-
+# Tambahkan bagian ini untuk Render
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
-
