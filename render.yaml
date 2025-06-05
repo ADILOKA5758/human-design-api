@@ -4,4 +4,4 @@ services:
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: python chart_api.py
+    startCommand: gunicorn chart_api:app
